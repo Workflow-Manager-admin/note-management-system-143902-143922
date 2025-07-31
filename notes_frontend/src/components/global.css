@@ -1,0 +1,93 @@
+:root {
+  --primary: #4F8A8B;
+  --secondary: #F9F9F9;
+  --accent: #F45B69;
+  --background: #ffffff;
+  --text-main: #222;
+  --border-radius: 12px;
+  --transition: 0.12s cubic-bezier(.4,0,.2,1);
+  --header-height: 56px;
+  --menu-width: 220px;
+}
+
+body {
+  background: var(--secondary);
+  font-family: 'Inter', Arial, sans-serif;
+  color: var(--text-main);
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+button:hover, .btn-primary:hover {
+  background: var(--accent);
+}
+
+input, textarea, select {
+  border-radius: var(--border-radius);
+  border: 1px solid #dadada;
+  padding: 0.55em 0.9em;
+  font-size: 1em;
+  margin-bottom: 1em;
+  width: 100%;
+  outline: none;
+  transition: border var(--transition);
+  background: #fff;
+}
+
+input:focus, textarea:focus, select:focus {
+  border: 1.5px solid var(--primary);
+}
+
+.fab {
+  position: fixed;
+  right: 2.5rem;
+  bottom: 2.5rem;
+  z-index: 30;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 2.2rem;
+  border: none;
+  box-shadow: 0 2px 7px #0001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition);
+}
+
+.fab:active, .fab:hover {
+  background: var(--primary);
+}
+
+@media (max-width: 900px) {
+  :root {
+    --menu-width: 60px;
+    --header-height: 48px;
+  }
+  .side-menu {
+    width: var(--menu-width) !important;
+    min-width: var(--menu-width) !important;
+    overflow-x: auto;
+  }
+  .side-menu .menu-label {
+    display: none;
+  }
+}
